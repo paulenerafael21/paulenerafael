@@ -1,6 +1,16 @@
-# Ionic Calculator
+# Ionic Firebase Photo Gallery
 
-A mobile calculator built with Ionic Framework, Vue 3, and Capacitor 8.
+A mobile photo gallery built with Ionic Framework, Vue 3, Firebase Firestore, and Firebase Cloud Storage.
+
+## Configure Firebase
+
+1. Create a Firebase project at https://console.firebase.google.com/.
+2. Register a Web app and copy its configuration values.
+3. Enable **Firestore Database** and **Storage**.
+4. Copy `.env.example` to `.env` and replace every `your-...` value with your Firebase values.
+5. For classroom testing, configure Firestore and Storage rules according to your instructor's requirements.
+
+The `.env` file is ignored by Git and must not be committed.
 
 ## Run locally
 
