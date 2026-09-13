@@ -41,7 +41,18 @@ jobs:
       - name: Check Android SDK
         run: |
           echo "ANDROID_HOME=$ANDROID_HOME"
-          sdkmanager --version
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+          sdkmanager_path="${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager"
+          if [ -x "$sdkmanager_path" ]; then
+            "$sdkmanager_path" --version
+          elif command -v sdkmanager >/dev/null 2>&1; then
+            sdkmanager --version
+          else
+            echo "sdkmanager is unavailable; listing the installed SDK instead."
+            test -d "$ANDROID_HOME/platforms"
+            test -d "$ANDROID_HOME/build-tools"
+            find "$ANDROID_HOME" -maxdepth 2 -type d -print | sort | head -40
+          fi
 
       - name: Sync Capacitor Android
         run: |
