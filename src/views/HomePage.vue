@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { IonButton, IonCard, IonCardContent, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonSpinner, IonText, IonTitle, IonToolbar } from '@ionic/vue';
 import { add, cloudUploadOutline, trashOutline } from 'ionicons/icons';
-import { listPhotos, removePhoto, uploadPhoto, type GalleryPhoto } from '../firebase';
+import { listPhotos, removePhoto, uploadPhoto, type GalleryPhoto } from '../galleryStorage';
 
 const photos = ref<GalleryPhoto[]>([]);
 const selectedFile = ref<File | null>(null);
@@ -60,7 +60,7 @@ onMounted(refreshPhotos);
     <IonHeader><IonToolbar color="primary"><IonTitle>My Photo Gallery</IonTitle></IonToolbar></IonHeader>
     <IonContent :fullscreen="true" class="gallery-content">
       <main class="gallery-shell">
-        <section class="intro"><p class="eyebrow">Ionic + Firebase</p><h1>Moments worth keeping.</h1><p class="subcopy">Upload your favorite photos and keep them together in one simple gallery.</p></section>
+        <section class="intro"><p class="eyebrow">Ionic + Local Storage</p><h1>Moments worth keeping.</h1><p class="subcopy">Upload your favorite photos and keep them on this device in one simple gallery.</p></section>
         <IonCard class="upload-card"><IonCardContent>
           <div class="section-heading"><div><p class="eyebrow">Add a memory</p><h2>Upload photo</h2></div><IonIcon :icon="cloudUploadOutline" aria-hidden="true" /></div>
           <IonItem lines="none" class="field"><IonLabel position="stacked">Title</IonLabel><IonInput v-model="title" placeholder="Give this photo a name" /></IonItem>

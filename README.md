@@ -1,16 +1,8 @@
-# Ionic Firebase Photo Gallery
+# Ionic Local Photo Gallery
 
-A mobile photo gallery built with Ionic Framework, Vue 3, Firebase Firestore, and Firebase Cloud Storage.
+A mobile photo gallery built with Ionic Framework and Vue 3. Photos are stored locally on the device.
 
-## Configure Firebase
-
-1. Create a Firebase project at https://console.firebase.google.com/.
-2. Register a Web app and copy its configuration values.
-3. Enable **Firestore Database** and **Storage**.
-4. Copy `.env.example` to `.env` and replace every `your-...` value with your Firebase values.
-5. For classroom testing, configure Firestore and Storage rules according to your instructor's requirements.
-
-The `.env` file is ignored by Git and must not be committed.
+Photos are saved in the app's local browser/WebView storage. No Firebase account or internet connection is required.
 
 ## Run locally
 
