@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { IonButton, IonCard, IonCardContent, IonContent, IonHeader, IonIcon, IonPage, IonSpinner, IonText, IonTitle, IonToolbar } from '@ionic/vue';
-import { cameraOutline, trashOutline } from 'ionicons/icons';
+import { trashOutline } from 'ionicons/icons';
 import { listPhotos, removePhoto, uploadPhoto, type GalleryPhoto } from '../galleryStorage';
 
 const photos = ref<GalleryPhoto[]>([]);
@@ -59,7 +59,7 @@ onMounted(refreshPhotos);
       <main class="gallery-shell">
         <IonCard class="camera-card"><IonCardContent>
           <h2>Camera</h2>
-          <IonButton expand="block" class="camera-button" @click="takePicture"><IonIcon slot="start" :icon="cameraOutline" aria-hidden="true" />Take Picture</IonButton>
+          <IonButton expand="block" class="camera-button" @click="takePicture">Take Picture</IonButton>
           <input ref="fileInput" class="hidden-input" type="file" accept="image/*" capture="environment" @change="chooseFile" />
           <IonText v-if="message" color="success"><p class="status">{{ message }}</p></IonText><IonText v-if="errorMessage" color="danger"><p class="status">{{ errorMessage }}</p></IonText>
         </IonCardContent></IonCard>
