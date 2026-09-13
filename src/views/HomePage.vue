@@ -1,28 +1,4 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import {
-  IonButton,
-  IonCol,
-  IonContent,
-  IonGrid,
-  IonHeader,
-  IonPage,
-  IonRow,
-  IonTitle,
-  IonToolbar
-} from '@ionic/vue';
-
-type Operator = '+' | '-' | 'x' | '/';
-
-
-
-
-
-
-
-
-
-<script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { IonButton, IonCard, IonCardContent, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonSpinner, IonText, IonTitle, IonToolbar } from '@ionic/vue';
 import { add, cloudUploadOutline, trashOutline } from 'ionicons/icons';
