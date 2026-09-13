@@ -61,7 +61,9 @@ jobs:
 
       - name: Build Android debug APK
         working-directory: android
-        run: ./gradlew --no-daemon assembleDebug
+        run: |
+          chmod +x ./gradlew
+          ./gradlew --no-daemon assembleDebug
 
       - name: Upload Ionic Calculator APK
         uses: actions/upload-artifact@v4
